@@ -1,0 +1,29 @@
+# Credentialed and reconstructed data
+data/*
+!data/README.md
+
+# Model checkpoints and generated predictions
+models/
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Private configuration
+.env
+.env.*
+
+# Generated notebook state
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Local environments and editor files
+.venv/
+.DS_Store
+
+# Generated results are private by default; only reviewed aggregates are tracked
+results/*
+!results/aggregate/
+!results/aggregate/**
