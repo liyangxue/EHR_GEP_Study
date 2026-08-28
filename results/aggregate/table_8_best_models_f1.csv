@@ -1,0 +1,5 @@
+Subtype,Optimization,Family,ModelId,Group,N,Accuracy,Precision,Recall,F1,AUC
+Compliance,Accuracy,Longformer,Compliance,Overall,151,0.9205,0.7407,0.8,0.7692,0.9419
+Credibility and Obstinacy,MSTL,Longformer-MSTL,Longformer_berkeley_mimic_GEP(C&O),Overall,151,0.9139,0.7308,0.76,0.7451,0.9311
+Descriptors,MSTL,Longformer-MSTL,Longformer_berkeley_mimic_GEP(Descriptors),Overall,151,0.8212,0.7143,0.7843,0.7477,0.838
+Misgendering,F1,Longformer,Misgendering,Overall,151,0.7682,0.4681,0.6875,0.557,0.7532
