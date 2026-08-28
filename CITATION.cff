@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying article."
+title: "Stigmatizing Language in Gender-Expansive Patient Records"
+type: software
+authors:
+  - family-names: Xue
+    given-names: Liyang
+  - family-names: Chayko
+    given-names: Mary
+  - family-names: Singh
+    given-names: Vivek Kumar
+preferred-citation:
+  type: article
+  title: "Stigmatizing Language in Gender-Expansive Patient Records: Corpus Development, Disparity Analysis, and Natural Language Processing–Based Detection Study"
+  authors:
+    - family-names: Xue
+      given-names: Liyang
+    - family-names: Chayko
+      given-names: Mary
+    - family-names: Singh
+      given-names: Vivek Kumar
+  journal: Journal of Medical Internet Research
+  year: 2026
+  date-published: 2026-08-27
+  volume: 28
+  issue: 1
+  doi: 10.2196/91089
+  url: "https://www.jmir.org/2026/1/e91089"
+repository-code: "https://github.com/liyangxue/EHR_GEP_Study"
+url: "https://github.com/liyangxue/EHR_GEP_Study"
