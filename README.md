@@ -1,7 +1,7 @@
 # Stigmatizing Language in Gender-Expansive Patient Records
 
-[![JMIR article](https://img.shields.io/badge/JMIR-2026-e91089-1769aa)](https://www.jmir.org/2026/1/e91089)
-[![DOI](https://img.shields.io/badge/DOI-10.2196%2F91089-1769aa)](https://doi.org/10.2196/91089)
+[![JMIR article](https://img.shields.io/static/v1?label=JMIR&message=e91089&color=1769aa)](https://www.jmir.org/2026/1/e91089)
+[![DOI](https://img.shields.io/static/v1?label=DOI&message=10.2196%2F91089&color=1769aa)](https://doi.org/10.2196/91089)
 
 This repository accompanies the following article:
 
