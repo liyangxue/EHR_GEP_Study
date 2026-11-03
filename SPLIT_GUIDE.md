@@ -27,10 +27,15 @@ At no point may a testing-set metric determine which epoch, architecture, hyperp
 
 ## Secure reconstruction
 
+The complete annotation corpus is available through [PhysioNet, version 1.0.0](https://physionet.org/content/mimic-iv-ext-gender-stigma/1.0.0/) ([DOI: 10.13026/x00d-c603](https://doi.org/10.13026/x00d-c603)) under credentialed access. It is distributed as `mimic_iv_gep_stigmatizing_language_annotations_v1_0_0.csv`, not as separate training and test files.
+
 Neither split file is distributed through this public GitHub repository. Each contains MIMIC identifiers, and the locally reconstructed modeling files also require a `text` column obtained by securely linking authorized annotation records to MIMIC-IV-Note.
 
-The combined credentialed annotation file does not include clinical text or a train/test indicator. Consequently, the exact published split cannot be recreated from public repository files or by independently generating a new random 80/20 split. Reproduction of the published model metrics requires the original authorized split assignment.
+The combined PhysioNet annotation file does not include clinical text or a train/test indicator. Consequently, the exact published split cannot be recreated from that release or public repository files alone, or by independently generating a new random 80/20 split. Reproduction of the published model metrics requires the original authorized split assignment. A new split may be used for a new experiment, but it must be documented as a new evaluation rather than the original split. For new models, consider patient-disjoint partitions because patients can contribute multiple notes.
+
+The PhysioNet release also includes updates to selected demographic variables relative to the publication. The underlying notes and stigma annotations are unchanged, but demographic analyses and subgroup results may differ. See [DATA_ACCESS.md](DATA_ACCESS.md#relationship-to-the-published-analyses).
 
 The public code and article use the corrected subtype label `Credibility and Obstinacy`. A legacy local split file may instead contain `Credibility and Obstinance`; rename that column locally before execution.
 
 Do not commit the reconstructed split files, their identifiers, or linked clinical text to a public repository.
+

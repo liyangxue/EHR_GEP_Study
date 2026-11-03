@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the accompanying article."
+message: "If you use this repository, please cite the accompanying article. If you use the annotation data, also cite the PhysioNet dataset listed in references."
 title: "Stigmatizing Language in Gender-Expansive Patient Records"
 type: software
 authors:
@@ -28,3 +28,21 @@ preferred-citation:
   url: "https://www.jmir.org/2026/1/e91089"
 repository-code: "https://github.com/liyangxue/EHR_GEP_Study"
 url: "https://github.com/liyangxue/EHR_GEP_Study"
+references:
+  - type: data
+    title: "MIMIC-IV-Ext Gender-Expansive Patient Stigmatizing Language Annotations"
+    authors:
+      - family-names: Xue
+        given-names: Liyang
+      - family-names: Chayko
+        given-names: Mary
+      - family-names: Singh
+        given-names: Vivek
+    year: 2026
+    date-published: 2026-10-19
+    version: "1.0.0"
+    publisher:
+      name: PhysioNet
+    doi: 10.13026/x00d-c603
+    url: "https://physionet.org/content/mimic-iv-ext-gender-stigma/1.0.0/"
+

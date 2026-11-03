@@ -8,6 +8,8 @@ This repository accompanies the following article:
 
 > Xue L, Chayko M, Singh VK. Stigmatizing Language in Gender-Expansive Patient Records: Corpus Development, Disparity Analysis, and Natural Language Processing–Based Detection Study. *Journal of Medical Internet Research*. 2026;28:e91089. [https://doi.org/10.2196/91089](https://doi.org/10.2196/91089)
 
+**Annotation data:** [PhysioNet, version 1.0.0](https://physionet.org/content/mimic-iv-ext-gender-stigma/1.0.0/) | [Dataset DOI: 10.13026/x00d-c603](https://doi.org/10.13026/x00d-c603). Access is credentialed, not unrestricted.
+
 ## Overview
 
 This study examines stigmatizing language in electronic health record documentation concerning gender-expansive patients. We constructed and manually annotated a corpus of 754 deidentified MIMIC-IV clinical notes, including 366 notes from gender-expansive patients and 388 demographically matched comparison notes.
@@ -54,7 +56,7 @@ The annotated corpus was divided at the note level into a training set of 603 no
 
 The note identifiers are disjoint across the two files. The split is not patient-disjoint: 31 patients have different notes in both sets. Results should therefore be interpreted as note-level held-out performance rather than patient-independent generalization.
 
-Under the published workflow, model fitting, hyperparameter selection, and fairness-threshold selection use the training set; the test set is reserved for final evaluation. Descriptive and regression analyses use the full 754-note corpus. Exact split assignments are not included in this public repository because they require MIMIC identifiers.
+Under the published workflow, model fitting, hyperparameter selection, and fairness-threshold selection use the training set; the test set is reserved for final evaluation. Descriptive and regression analyses use the full 754-note corpus. Exact split assignments are not included in this public repository because they require MIMIC identifiers. The PhysioNet release provides the combined corpus without a train/test indicator, so it does not by itself reconstruct the original split.
 
 For neural models, epoch or configuration selection is performed on an internal stratified subset drawn only from the 603-note training set. For traditional models, selection uses cross-validation within the training set. After a fitted model has been frozen, group-specific fairness thresholds are selected from its predictions on the official training set. The prespecified best-fair rule uses a maximum ΔFPR of 0.07; if no threshold pair satisfies that constraint, the pair with the smallest training-set ΔFPR is retained. The selected thresholds are then applied unchanged to the 151-note held-out test set.
 
@@ -91,15 +93,19 @@ The fairness notebooks expect local prediction files under `results/predictions/
 
 ## Data availability
 
-The annotation dataset is being prepared for release through PhysioNet under credentialed access. It contains note-level annotations and MIMIC identifiers that allow authorized users to link the annotations to source records. Clinical note text is not included.
+The annotation dataset is published on PhysioNet as [MIMIC-IV-Ext Gender-Expansive Patient Stigmatizing Language Annotations, version 1.0.0](https://physionet.org/content/mimic-iv-ext-gender-stigma/1.0.0/) ([DOI: 10.13026/x00d-c603](https://doi.org/10.13026/x00d-c603)), released on October 19, 2026.
 
-Access to the underlying records requires separate credentialed access to [MIMIC-IV](https://physionet.org/content/mimiciv/) and [MIMIC-IV-Note](https://physionet.org/content/mimic-iv-note/2.2/), completion of the required human-subjects research training, and acceptance of the applicable PhysioNet data use agreement.
+The release contains one file, `mimic_iv_gep_stigmatizing_language_annotations_v1_0_0.csv`, with 754 note-level records and 19 columns. It includes annotations and MIMIC linkage identifiers, but no clinical note text and no train/test indicator. Credentialed users can link the annotations to source notes locally using `note_id`.
+
+Download the annotations through PhysioNet after completing the required credentialing, training, and data use agreement. Linking to the underlying records also requires authorized access to [MIMIC-IV](https://physionet.org/content/mimiciv/) and [MIMIC-IV-Note](https://physionet.org/content/mimic-iv-note/2.2/). The annotation data are governed by the PhysioNet Credentialed Health Data License 1.5.0 and the applicable data use agreement, not this repository's MIT software license.
+
+The PhysioNet release includes updates to selected demographic variables relative to the publication. The underlying notes and stigma annotations are unchanged, but analyses using the updated variables may differ from the published results. The findings and aggregate results presented here refer to the published study. See [DATA_ACCESS.md](DATA_ACCESS.md) for local setup and reproducibility limits.
 
 Do not commit reconstructed clinical text, MIMIC identifiers, patient-level predictions, model-error examples, or credentialed annotation files to a public repository. The included `.gitignore` excludes the expected local data and model directories by default.
 
 ## Citation
 
-If you use this work, please cite:
+If you use this repository, please cite the accompanying article. If you use the annotation dataset, also cite the PhysioNet data release below and follow the source-data and PhysioNet citation instructions on its release page.
 
 ```bibtex
 @article{xue2026stigmatizing,
@@ -114,6 +120,22 @@ If you use this work, please cite:
 }
 ```
 
+### Annotation dataset
+
+Xue, L., Chayko, M., & Singh, V. (2026). *MIMIC-IV-Ext Gender-Expansive Patient Stigmatizing Language Annotations* (version 1.0.0). PhysioNet. RRID:SCR_007345. [https://doi.org/10.13026/x00d-c603](https://doi.org/10.13026/x00d-c603)
+
+```bibtex
+@dataset{xue2026genderstigma,
+  author    = {Xue, Liyang and Chayko, Mary and Singh, Vivek},
+  title     = {MIMIC-IV-Ext Gender-Expansive Patient Stigmatizing Language Annotations},
+  publisher = {PhysioNet},
+  year      = {2026},
+  version   = {1.0.0},
+  doi       = {10.13026/x00d-c603},
+  url       = {https://physionet.org/content/mimic-iv-ext-gender-stigma/1.0.0/}
+}
+```
+
 ## Authors
 
 - Liyang Xue
@@ -125,3 +147,4 @@ Department of Library and Information Science, Rutgers, The State University of 
 ## License
 
 The software and code in this repository are available under the [MIT License](LICENSE). The license does not grant access to MIMIC-IV, MIMIC-IV-Note, or credentialed annotation data; those resources remain subject to their respective access requirements and data use agreements.
+

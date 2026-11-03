@@ -4,10 +4,11 @@ This manifest describes the curated files intended for the public GitHub reposit
 
 ## Documentation
 
-- `README.md`: project overview, repository structure, and main results
-- `DATA_ACCESS.md`: credentialed-data requirements and secure local setup
-- `SPLIT_GUIDE.md`: published 80/20 note-level split, counts, intended uses, and reconstruction limits
-- `CITATION.cff`: machine-readable citation metadata
+- `README.md`: project overview, repository structure, published results, and article and PhysioNet dataset citations
+- `DATA_ACCESS.md`: published PhysioNet annotation release, credentialed-data requirements, secure local setup, and differences from the publication
+- `SPLIT_GUIDE.md`: published 80/20 note-level split, counts, intended uses, and reconstruction limits of the combined PhysioNet release
+- `data/README.md`: annotation download location and local-data directory guidance
+- `CITATION.cff`: machine-readable article citation and PhysioNet dataset reference
 - `LICENSE`: MIT License for the software and code in this repository
 
 ## Analysis notebooks
@@ -56,3 +57,4 @@ The `notebooks/fairness/` directory contains subgroup metric calculation and tra
 - Dependency-discovery notebook and redundant copies
 - Exploratory fairness ablations and older experiments not reported as final article results
 - Legacy multihead evaluation CSV files whose results were not used in the final article
+
